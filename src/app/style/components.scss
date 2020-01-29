@@ -1,0 +1,111 @@
+@import 'layout.scss';
+
+.logo {
+    width: 200px;
+    height: auto;
+}
+
+$font-sizes: (
+    h1: 58px,
+    h2: 40px,
+    h3: 24px,
+    p: 18px,
+);
+
+@each $heading, $font-size in $font-sizes {
+
+    #{$heading} {
+        font-size: $font-size;
+    }
+}
+
+/*INPUT AND TEXTAREA FIELDS */
+
+input, textarea {
+    font-family: $font-family;
+    padding: 15px 10px; 
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid map-get($theme, orange-main);
+    outline: none;
+    margin-bottom: 10px;
+}
+
+
+/* NAVBAR */
+.menu {
+    display: flex;
+    justify-content: flex-start;
+    font-weight: bold;
+    list-style-type: none;
+    padding: 0;
+    li {
+        margin-right: 25px;
+        padding: 5px 0;
+        box-sizing: border-box;
+        cursor: pointer;
+
+        &:hover {
+            animation: border-expand 0.15s ease-in-out;
+            animation-fill-mode: forwards;
+        }
+    }
+
+}
+
+@keyframes border-expand {
+    from {
+        border-bottom-width: 0px solid map-get($theme, orange-main);
+    }
+
+    to {
+        border-bottom: 3px solid map-get($theme, orange-main);
+    }
+}
+
+
+/* BUTTON */
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+        img {
+            animation: arrow-hover 0.7s ease-in-out infinite;
+        }
+    }
+    span {
+        font-family: $font-family;
+        font-size: map-get($font-sizes, h2);
+        color: map-get($theme, white);
+        font-weight: bold;
+    }
+    img {
+        margin-left: 20px;
+
+    }
+}
+
+@keyframes arrow-hover {
+    0% {
+        margin-left: 20px;
+    }
+    50% {
+        margin-left: 35px;
+    }
+    100% {
+        margin-left: 20px;
+    }
+
+}
+
+/* ICON */
+
+.icon {
+    width: 80px;
+    height: auto;
+}

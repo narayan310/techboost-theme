@@ -1,0 +1,41 @@
+@import "style/layout.scss";
+@import "style/components.scss";
+
+.body {
+
+    display: flex;
+    margin:0;
+    width: 100vw;
+    min-height: 100vh;
+    font-family: 'Roobert';
+    background-color: map-get($theme, black-main);
+    section {
+        width: 50%;
+        height: 100%;
+        padding: 20px;
+        .forms {
+            display: flex;
+            flex-direction: column;
+            margin-top: 40px;
+        }
+    }
+}
+
+.logos {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.dark-background {
+    background-color: map-get($theme, black-main);
+    color: map-get($theme, white);
+
+    > * {
+        margin: 10px 0;
+    }
+}
+
+.orange-background {
+    background-color: map-get($theme, orange-main);
+}
